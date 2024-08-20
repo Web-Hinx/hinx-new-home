@@ -44,3 +44,27 @@ function moveStylishCarousel() {
 
 
 setInterval(moveStylishCarousel, 5000);
+
+//newsletter
+document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const responseMessage = document.getElementById('response-message');
+
+  // Simple email validation
+  if (validateEmail(email)) {
+      // Simulate a successful subscription
+      responseMessage.textContent = 'Thank you for subscribing!';
+      responseMessage.style.color = '#28a745';
+  } else {
+      responseMessage.textContent = 'Please enter a valid email address.';
+      responseMessage.style.color = '#d9534f';
+  }
+});
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+

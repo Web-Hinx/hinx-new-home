@@ -1,4 +1,3 @@
-
 /* base styles */
 * {
     margin: 0;
@@ -45,9 +44,9 @@ header {
 
 body {
     height: 100vh;
-    background: linear-gradient(15deg, var(--color-start), var(--color-between0), var(--color-between1), var(--color-between2), var(--color-between3), var(--color-end), var(--color-between0));
+    background: linear-gradient(60deg, var(--color-start), var(--color-between0), var(--color-between1), var(--color-between2), var(--color-between3), var(--color-end), var(--color-between0));
     background-size: 800% 800%;
-    animation: gradientBackground 10s ease-in-out infinite;
+    animation: gradientBackground 8s ease-in-out infinite;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -103,7 +102,7 @@ body {
     border-radius: 25px;
     margin-right: 10px; 
     background-size: 200% 200%; /* Add this to allow smooth animation */
-    animation: moveGradient 7s ease-in-out infinite;
+    animation: moveGradient 6s ease-in-out infinite;
 }
 
 @keyframes moveGradient {

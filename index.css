@@ -1,0 +1,455 @@
+
+/* base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+}
+
+.menu-text-color {
+    list-style: none;
+}
+
+.menu-text-color a {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #000000a8;
+    font-size: 4vw;
+    font-weight: bolder;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.menu-text-color a:hover {
+    background: linear-gradient(45deg,#9e1687,#010049,#9e1687);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Root colors for gradient */
+:root {
+    --color-start: rgb(0,0,0);
+    --color-between0: rgb(0, 1, 22);
+    --color-between1: rgb(18, 0, 32);
+    --color-between2: rgb(46, 1, 49);
+    --color-between3: rgb(9, 0, 34);
+    --color-end: rgb(0, 0, 0);
+
+    --color-1:rgb(158, 22, 135);
+    --color-2:rgb(1, 0, 41);
+    --color-3:rgb(158, 22, 135);
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(15deg, var(--color-start), var(--color-between0), var(--color-between1), var(--color-between2), var(--color-between3), var(--color-end), var(--color-between0));
+    background-size: 800% 800%;
+    animation: gradientBackground 10s ease-in-out infinite;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 3vw;
+}
+
+
+.butt a {
+    text-decoration: none;
+}
+
+.butt {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    position: relative;
+    z-index: 2; 
+    margin-right: 1%;
+}
+
+.discuss {
+    background: linear-gradient(15deg, var(--color-1), var(--color-2), var(--color-3));
+    display: flex;
+    padding: 1vh 1vw;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: 99%;
+    border: none;
+    border-radius: 25px;
+    margin-right: 10px; 
+    background-size: 200% 200%; /* Add this to allow smooth animation */
+    animation: moveGradient 7s ease-in-out infinite;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+.discuss.active {
+    background: #4d974f; /* New background color */
+    color: black; /* Change text color */
+}
+
+/* Ham menu */
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    position: relative;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span {
+    background-color: #4d974f;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Off-screen menu */
+.off-screen-menu {
+    background-color: rgb(193, 153, 211);
+    height: 100vh;
+    width: 100%;
+    max-width: 50%;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+.logo img {
+    width: 4vw;
+}
+
+/* Hero section */
+.hero {
+    height: 88vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 6em;
+}
+
+.hero-inner {
+    text-align: center;
+}
+
+.hinx span {
+    background: repeating-linear-gradient(45deg,var(--color-1), var(--color-2), var(--color-3));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animation 7s ease-in-out infinite;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    font-style: normal;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 100%;
+    }
+    50%{
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+.hinx {
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 400%;
+    font-weight: bolder;
+    font-style: normal;
+}
+
+
+.vision-section {
+    height: 130vh;
+    width: 100%;
+    background-color: #400f6d;
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.vision-first, .vision-second {
+    width: 50%;
+    padding: 2vw 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box; /* Ensure padding and borders are included in width/height */
+}
+
+.vision-first h1, .projects h1 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 2rem; /* Adjusted for better responsiveness */
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.vision-first p, .carousel-slide button {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1rem; /* Use rem for consistent sizing */
+    font-weight: 500;
+    color: white;
+}
+
+.carousel {
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added alpha for a softer shadow */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.carousel-item, .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.carousel-item img, .carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.projects {
+    width: 100%;
+    height: auto; /* Adjusted for dynamic content */
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4vh 3vw;
+}
+
+.stylish-carousel {
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel-content {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+.carousel-slide h2 {
+    color: white;
+    font-size: 1.5rem; /* Adjusted for better readability */
+    margin-top: 10px;
+}
+
+.carousel-slide button {
+    margin-top: 20px;
+    background-color: transparent; /* Use transparent instead of hex with alpha */
+    border: none;
+    cursor: pointer; /* Add cursor for better UX */
+}
+
+.carousel-slide button i {
+    font-size: 2rem;
+}
+
+.carousel-details {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tags span {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #444;
+    color: #fff;
+    font-size: 0.875rem; /* Adjusted for better consistency */
+}
+
+.carousel-details h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.carousel-details p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .vision-first, .vision-second {
+        width: 100%; /* Full width on smaller screens */
+        padding: 4vw 2vw; /* Adjust padding */
+    }
+
+    .vision-first h1 {
+        font-size: 1.5rem; /* Smaller heading on small screens */
+    }
+
+    .projects h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-slide h2 {
+        font-size: 1.25rem;
+    }
+
+    .carousel-slide button i {
+        font-size: 1.5rem;
+    }
+
+    .tags span {
+        font-size: 0.75rem;
+    }
+
+    .hero-inner span {
+        font-size: 100%;
+    }
+
+    .hero-inner {
+        font-size: 80%;
+    }
+
+    .logo img {
+        width: 10vw;
+    }
+
+    .discuss {
+        margin-left: 30%;
+        padding: 1vh 1vw;
+    }
+
+    .off-screen-menu {
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        right: -100%;
+    }
+
+    .vision-section {
+        width: 100%;
+        height: 100vh;
+        flex-wrap: wrap;
+    }
+
+    .vision-first {
+        height: 40vh;
+    }
+
+    .vision-first h1 {
+        font-size: 230%;
+    }
+
+    .vision-first p {
+        font-size: 80%;
+        font-weight: 400;
+    }
+
+    .vision-second {
+        height: 34vh;
+    }
+
+    .carousel {
+        align-self: center;
+        width: 90%;
+        max-width: 800px;
+        overflow: hidden;
+    }
+
+    .carousel-item img {
+        width: 150%;
+    }
+}
+
+
+
+
+

@@ -44,12 +44,13 @@ header {
 
 body {
     height: 100vh;
-    background: linear-gradient(60deg, var(--color-start), var(--color-between0), var(--color-between1), var(--color-between2), var(--color-between3), var(--color-end), var(--color-between0));
+    /* background: linear-gradient(60deg, var(--color-start), var(--color-between0), var(--color-between1), var(--color-between2), var(--color-between3), var(--color-end), var(--color-between0)); */
     background-size: 800% 800%;
-    animation: gradientBackground 8s ease-in-out infinite;
+    background-color: #000000;
+    /* animation: gradientBackground 8s ease-in-out infinite; */
     font-family: "Plus Jakarta Sans", sans-serif;
 }
-
+/* 
 @keyframes gradientBackground {
     0% {
         background-position: 0% 50%;
@@ -66,7 +67,7 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
+} */
 
 /* Navbar */
 .navbar {
@@ -361,8 +362,156 @@ body {
     font-size: 1rem;
     color: #bbb;
 }
+/* services csss */
+.services{
+    height: auto;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.h1{
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.h1 h1{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 3rem; /* Adjusted for better responsiveness */
+    font-weight: 600;
+    color: #ffffff;
+
+}
+.ser-box{
+ 
+    width: 100%;
+    height: auto;
+  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+
+    justify-content: center;
+
+}
+
+.box {
+    height: 350px;
+    width: 400px;
+    background-color: rgb(32, 37, 39);
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    position: relative;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(158,99,212,0.5), rgba(58,123,213,0.3));
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.box:hover {
+    box-shadow: 0 0 30px rgba(158, 99, 212, 0.5), 0 0 60px rgba(58, 123, 213, 0.3);
+    transform: translateY(-5px);
+}
+
+.box:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.box {
+    animation: float 3s ease-in-out infinite;
+}
+
+.box h2 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 2rem; /* Adjusted for better responsiveness */
+    font-weight: 700;
+    color: #fffdfd;
+   
+}
+.box p{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1rem; /* Adjusted for better responsiveness */
+    font-weight: 500;
+    color: #ffffff;
+    margin-left: 1.2vw;
+    margin-top: 3vh;
+    text-align: center;
+
+}
+.box i{
+    margin-top: 2vh;
+    font-size: 3rem;
+    color: white;
+}
+.box i:hover{
+    font-size: 4rem;
+    color: purple;
+
+}
+.box img{
+    width: 40px;
+    height: auto;
+    margin-bottom: 4vh;
+   
+
+}
+
+
+/* end of services css */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .footer{
+    margin-top: 3vh;
     background-color: rgb(0, 0, 0);
     height: 50vh;
     width: 100%;
@@ -574,6 +723,7 @@ hr {
 
 
 
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .vision-first, .vision-second {
@@ -671,6 +821,8 @@ hr {
         font-size: 2.3rem;
         margin-bottom: 3%;
     }
+
+  
 }
 
 
